@@ -1,6 +1,20 @@
 name: Actions Workflow
 
 on:
+  push:
+    # branches:
+    # branches-ignore:
+    #  - master
+    #  - 'feature/*' # matches feature/featA, feature/featB, doesn't match feature/feat/a
+    #  - 'feature/**' # matches any string including feature/feat/a
+    #  - '!feature/featC'
+    #tags:
+    #  - v1.*
+    #paths:
+    #  - '**.js'
+    #  - '!filename.js'
+    # paths-ignore:
+    #  - 'docs/**'  # do not build on doc updates
   repository_dispatch:
     types: [build]
 # schedule:
@@ -14,6 +28,7 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+    ### Use payload with repository Dispatch
       - name: payload
         run: echo ${{ github.event.client_payload.env }}
       - name: List Files
