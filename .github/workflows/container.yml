@@ -15,6 +15,7 @@ jobs:
           entrypoint: "/bin/echo"
           args: "Hello World"
       - name: Log node version
+        run: chmod -x ./script.sh
         uses: docker://node:12.14.1-alpine3.10
         with:
           entrypoint: /usr/local/bin/node
@@ -23,7 +24,7 @@ jobs:
       - name: Run a script
         uses: docker://node:12.14.1-alpine3.10
         with:
-          entrypoint: script.sh
+          entrypoint: ./script.sh
           args: "Some string"
   node-docker:
     runs-on: ubuntu-latest
