@@ -37,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: |
           ls -l /usr/local/bin
-          /user/bin/python2.7 -m pip install --upgrade pip
+          CPython -m pip install --upgrade pip
           pip install flake8 pytest
   node-docker:
     runs-on: ubuntu-latest
