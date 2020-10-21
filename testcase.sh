@@ -10,4 +10,6 @@ pip install ddt
 pip install pytest-html
 pip install flask
 pip install requests
+echo "installed pip stuff "
 ls -l /home/runner/work/
+echo "finished ls -l "
