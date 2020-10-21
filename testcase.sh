@@ -1,7 +1,8 @@
 #!/bin/sh
 echo $1 $2
 echo "Test GATest 1.16 "
-which python
+var=$(which python)
+echo "$var"
 python -m pip install --upgrade pip
 pip install pytest
 pip install selenium
@@ -12,5 +13,6 @@ pip install pytest-html
 pip install flask
 pip install requests
 echo "installed pip stuff "
-ls -l /home/runner/work/
-echo "finished ls -l "
+var1=$(pwd)
+echo"$var1"
+echo "finished ls -l ls -l /home/runner/work/" 
