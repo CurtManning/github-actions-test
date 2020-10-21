@@ -36,7 +36,8 @@ jobs:
           args: "Some string"
       - name: Install dependencies
         run: |
-          ls -l /user/bin
+          ls -l /usr/bin/
+          ls -l /usr/bin/docker
           /user/bin/python3 -m pip install --upgrade pip
           pip install flake8 pytest
   node-docker:
