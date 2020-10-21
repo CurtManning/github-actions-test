@@ -3,7 +3,7 @@ name: Test Workflow
 on: [push]
 jobs:
   run-windows-commands:
-    runs-on: [self-hosted, Windows, X64]
+    runs-on: windows-latest
     steps:
       - name: Directory PowerShell
         run: Get-Location
