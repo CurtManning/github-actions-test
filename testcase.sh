@@ -15,6 +15,7 @@ pip3 install ddt
 pip3 install pytest-html
 pip3 install flask
 pip3 install requests
+var3=$(ls -l /user/bin/)
 echo "installed pip stuff "
 var1=$(pwd)
 echo "$var1"
