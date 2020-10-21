@@ -18,6 +18,6 @@ pip3 install requests
 echo "installed pip stuff "
 var1=$(pwd)
 echo "$var1"
-var2=(ls -l)
+var2=$(ls -l)
 echo "$var2"
-echo "finished ls -l ls -l /home/runner/work/"
+echo "finished "
