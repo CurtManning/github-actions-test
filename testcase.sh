@@ -1,6 +1,7 @@
 #!/bin/sh
 echo $1 $2
 echo "Test GATest 1.16 "
+which python
 python -m pip install --upgrade pip
 pip install pytest
 pip install selenium
