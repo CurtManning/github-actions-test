@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: log node version
         run: node -v
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
       - name: Step with docker
         uses: docker://node:12.14.1-alpine3.10
         with:
