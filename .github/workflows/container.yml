@@ -36,7 +36,8 @@ jobs:
           args: "Some string"
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
+          ls -l /user/bin
+          /user/bin/python3 -m pip install --upgrade pip
           pip install flake8 pytest
   node-docker:
     runs-on: ubuntu-latest
