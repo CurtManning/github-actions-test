@@ -9,10 +9,10 @@ jobs:
     steps:
       - name: log node version
         run: node -v
-      - name: Setup Python
-        uses: actions/setup-python@v1
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          python-version: 3.7
+          python-version: 3.8
       - name: Step with docker
         uses: docker://node:12.14.1-alpine3.10
         with:
@@ -36,9 +36,8 @@ jobs:
           args: "Some string"
       - name: Install dependencies
         run: |
-          ls -l /usr/bin/
-          ls -l /usr/bin/docker
-          /user/bin/python3 -m pip install --upgrade pip
+          ls -l /usr/local/bin/node
+          /user/bin/python -m pip install --upgrade pip
           pip install flake8 pytest
   node-docker:
     runs-on: ubuntu-latest
