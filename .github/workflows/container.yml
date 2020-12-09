@@ -9,10 +9,6 @@ jobs:
     steps:
       - name: log node version
         run: node -v
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
       - name: Step with docker
         uses: docker://node:12.14.1-alpine3.10
         with:
@@ -29,11 +25,16 @@ jobs:
         with:
           entrypoint: ./testcase.sh
           args: "Some string"
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - run: python my_script.py
       - name: Run a script
         uses: docker://node:12.14.1-alpine3.10
         with:
           entrypoint: ./script.sh
-          args: "Some string"
+          args: "Some string "
       - name: Install dependencies
         run: |
           ls -l /usr/local/bin
