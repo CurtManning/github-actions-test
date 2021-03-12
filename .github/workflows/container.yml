@@ -20,11 +20,26 @@ jobs:
           entrypoint: /usr/local/bin/node
           args: -v
       - uses: actions/checkout@v1
+      - name: Run pytest
+        uses: docker://node:12.14.1-alpine3.10
+        with:
+          entrypoint: ./testcase.sh
+          args: "Some string"
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - run: python my_script.py
       - name: Run a script
         uses: docker://node:12.14.1-alpine3.10
         with:
           entrypoint: ./script.sh
-          args: "Some string"
+          args: "Some string "
+      - name: Install dependencies
+        run: |
+          ls -l /usr/local/bin
+          cpython -m pip install --upgrade pip
+          pip install flake8 pytest
   node-docker:
     runs-on: ubuntu-latest
     services:
