@@ -1,0 +1,13 @@
+name: WindowRunner
+on: [push, pull_request]
+
+jobs:
+  functions:
+    runs-on: [self-hosted, Windows, X64]
+    steps:
+      - name: dump
+        run: |
+          echo ${{ contains( 'hello', 'll' ) }}
+          echo ${{ startsWith( 'hello', 'he' ) }}
+          echo ${{ endsWith( 'hello', 'lo' ) }}
+          echo ${{ format('Hello {0} {1} {2}', 'World', '!', '!') }}
