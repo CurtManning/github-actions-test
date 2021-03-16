@@ -1,34 +1,15 @@
-name: Actions Workflow
-# Actions
+name: Daily Test Suite
+# Runs Tuesday - Friday
 on:
-  push:
-    # branches:
-    # branches-ignore:
-    #  - master
-    #  - 'feature/*' # matches feature/featA, feature/featB, doesn't match feature/feat/a
-    #  - 'feature/**' # matches any string including feature/feat/a
-    #  - '!feature/featC'
-    #tags:
-    #  - v1.*
-    #paths:
-    #  - '**.js'
-    #  - '!filename.js'
-    # paths-ignore:
-    #  - 'docs/**'  # do not build on doc updates
+  schedule:
+    - cron: "15,30,45,01 * * * 2,3,4,5"
   repository_dispatch:
-    types: [build]
-# schedule:
-#   - cron: "1 16 * * *" 
-# [push, pull_request]
-
-  pull_request:
-    types: [closed, assigned, opened, reopened]
-
+    types: [dailymorning]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-    ### Use payload with repository Dispatch 
+    ### Use payload with repository Dispatch
       - name: payload
         run: echo ${{ github.event.client_payload.env }}
       - name: List Files
