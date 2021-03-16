@@ -1,0 +1,35 @@
+name: Daily Test Suite
+# Runs 6:55am Tuesday - Friday
+on:
+  schedule:
+    - cron: "15,30,45,01 * * * 2,3,4,5"
+  repository_dispatch:
+    types: [dailymorning]
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+    ### Use payload with repository Dispatch
+      - name: payload
+        run: echo ${{ github.event.client_payload.env }}
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: List Files After Checkout
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{github.token}}"
+      - name: Simple JS Actions
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: John
+      - name: "Log Greeting Time"
+        run: echo "${{ steps.greet.outputs.time}}"
