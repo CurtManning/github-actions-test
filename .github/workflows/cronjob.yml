@@ -1,5 +1,5 @@
 name: Daily Test Suite
-# Runs 6:55am Tuesday - Friday
+# Runs Tuesday - Friday
 on:
   schedule:
     - cron: "15,30,45,01 * * * 2,3,4,5"
