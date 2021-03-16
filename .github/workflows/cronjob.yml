@@ -2,7 +2,7 @@ name: Daily Test Suite
 # Runs Tuesday - Friday
 on:
   schedule:
-    - cron: "15,30,45,01 * * * 2,3,4,5"
+    - cron: "*/15 * * * 2-5"
   repository_dispatch:
     types: [dailymorning]
 jobs:
