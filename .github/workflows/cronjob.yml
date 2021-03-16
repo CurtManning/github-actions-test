@@ -2,9 +2,7 @@ name: Daily Test Suite
 # Runs Tuesday - Friday
 on:
   schedule:
-    - cron: "05 11 * * *"
-  repository_dispatch:
-    types: [dailymorning]
+    - cron: "10 13 * * *"
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
