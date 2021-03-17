@@ -1,8 +1,10 @@
 name: Daily Test Suite
-# Runs Tuesday - Friday
+# Runs utc time which is +7 hours
 on:
-  schedule:
-    - cron: "10 13 * * *"
+  # schedule:
+  #   - cron: "10 13 * * *"
+  repository_dispatch:
+    types: [dailysuite]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
