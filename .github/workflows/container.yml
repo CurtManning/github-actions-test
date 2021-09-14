@@ -10,12 +10,12 @@ jobs:
       - name: log node version
         run: node -v
       - name: Step with docker
-        uses: docker://node:12.14.1-alpine3.10
+        uses: docker://node:current-alpine3.13
         with:
           entrypoint: "/bin/echo"
           args: "Hello World"
       - name: Log node version
-        uses: docker://node:12.14.1-alpine3.10
+        uses: docker://node:current-alpine3.13
         with:
           entrypoint: /usr/local/bin/node
           args: -v
@@ -30,11 +30,10 @@ jobs:
       - name: Install dependencies
         id: dependencies
         run: |
-          apt-get install -y libpython-all-dev
           python -m pip install --upgrade pip
           pip install -r ./requirements.txt
       - name: Run a script
-        uses: docker://node:12.14.1-alpine3.10
+        uses: docker://node:current-alpine3.13
         with:
           entrypoint: ./script.sh
           args: "Some string "
