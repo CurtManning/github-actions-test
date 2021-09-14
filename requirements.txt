@@ -1,0 +1,16 @@
+flask
+pytest~=6.2.2
+gunicorn
+selenium~=3.141.0
+requests~=2.25.1
+webdriver-manager
+webdrivermanager
+pytest-ordering
+allure-pytest
+pytest-ordering
+ddt~=1.4.2
+pytest-html
+mozdownload
+msedge-selenium-tools
+configparser~=5.0.2
+pandas~=1.3.1
