@@ -1,12 +1,13 @@
 #!/bin/sh
 echo $1 $2
 echo "Test GATest 1.16 "
-var=$(which python3)
+var=$(which python)
 which python
+echo "The version of Python is "
 pwd
 echo "This is the pwd $(pwd)"
-echo "This is the ls in /__t/Python/3.7.9/   $(ls -l /__t/Python/3.7.9/)"
-/user/bin/python3 -m pip install --upgrade pip
+echo "This is the ls in /__t/Python/3.7.9/   $(ls -l /__t/Python)"
+/user/bin/python -m pip install --upgrade pip
 pip install pytest
 pip install selenium
 pip install allure-pytest
