@@ -28,10 +28,10 @@ jobs:
           python-version: 3.8
       # install python dependencies
       - name: Install dependencies
-        id: dependencies
-        run: python script.py
+        uses: docker://node
+        run: python ./script.py
       - name: Run a script
-        uses: docker://node:current-alpine3.13
+        uses: docker://node:current
         with:
           entrypoint: ./script.sh
           args: "Some string "
